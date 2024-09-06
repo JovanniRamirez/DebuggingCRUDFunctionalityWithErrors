@@ -14,9 +14,10 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
 
         public IActionResult Index()
         {
-            return View(context);
+            return View(StudentDb.GetStudents(context)); //Use Studentdb to get list of students to send to student index
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
