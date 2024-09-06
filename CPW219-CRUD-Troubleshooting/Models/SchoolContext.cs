@@ -10,5 +10,6 @@ namespace CPW219_CRUD_Troubleshooting.Models
         }
 
         public DbSet<Student> Students { get; set; }
+
     }
 }
