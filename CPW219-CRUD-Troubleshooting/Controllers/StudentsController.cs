@@ -38,13 +38,14 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             return View(p);
         }
 
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             //get the product by id
             Student p = StudentDb.GetStudent(context, id);
 
             //show it on web page
-            return View();
+            return View(p);
         }
 
         [HttpPost]
@@ -54,7 +55,7 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             {
                 StudentDb.Update(context, p);
                 ViewData["Message"] = "Product Updated!";
-                return View(p);
+                return RedirectToAction("Index");
             }
             //return view with errors
             return View(p);
