@@ -14,8 +14,7 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
 
         public IActionResult Index()
         {
-            List<Student> products = StudentDb.GetStudents(context);
-            return View();
+            return View(context);
         }
 
         public IActionResult Create()
