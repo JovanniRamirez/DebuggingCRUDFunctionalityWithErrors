@@ -54,7 +54,7 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Update(context, p);
-                ViewData["Message"] = "Product Updated!";
+                TempData["Message"] = $"Student {p.Name} was Updated!";
                 return RedirectToAction("Index");
             }
             //return view with errors
@@ -75,6 +75,7 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
 
             StudentDb.Delete(context, p);
 
+            TempData["Message"] = $"{p.Name} was deleted successfully!";
             return RedirectToAction("Index");
         }
     }
